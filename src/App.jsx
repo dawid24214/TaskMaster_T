@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import {Header} from  './components/Header.jsx';
+import {NavigationBar} from './components/NavigationBar.jsx';
 import {BrowserRouter, Outlet, Route, Routes} from "react-router-dom";
 import './App.css'
 
@@ -7,7 +8,10 @@ const HomeLayout = () => {
     return(
         <div>
         <Header/>
+            <NavigationBar/>
+            <main>
         <Outlet/>
+            </main>
         </div>
     )
 }
@@ -17,7 +21,8 @@ const Router = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<HomeLayout/>}>
+                <Route path='/' element={<HomeLayout />}>
+
                 </Route>
             </Routes>
         </BrowserRouter>

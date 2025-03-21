@@ -5,7 +5,6 @@ import {Link} from "react-router-dom";
     return(
      <>
          <section>
-             <h1>Moja strona </h1>
 
          </section>
 

@@ -7,8 +7,15 @@ import './App.css'
 const HomeLayout = () => {
     return(
         <div>
-        <Header/>
-            <NavigationBar/>
+            <div className='header'>
+                <NavigationBar/>
+                <Header/>
+
+            </div>
+
+
+
+
             <main>
         <Outlet/>
             </main>

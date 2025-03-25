@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import {Header} from  './components/Header.jsx';
+// import {Header} from  './components/Header.jsx';
 import {NavigationBar} from './components/NavigationBar.jsx';
 import {BrowserRouter, Outlet, Route, Routes} from "react-router-dom";
 import './App.css'
@@ -8,8 +8,11 @@ const HomeLayout = () => {
     return(
         <div>
             <div className='header'>
-                <NavigationBar/>
-                <Header/>
+
+                    <NavigationBar/>
+
+
+                {/*<Header/>*/}
 
             </div>
 

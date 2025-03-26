@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import {NavigationBar} from './components/NavigationBar.jsx';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
-import './App.css';
 
 // Przykładowy komponent strony głównej
 const Home = () => {

@@ -1,17 +1,35 @@
 import {Link} from "react-router-dom";
-import {Home, List, PlusCircle, BarChart, User} from 'luci'
+import {Home, List, PlusCircle, BarChart, User} from 'lucide-react';
 import React from "react";
 import '../style/_navigationbar.scss';
   export const NavigationBar = () =>{
     return(
         <>
-            <div className='navigation-bar'>
-                <li>Home</li>
-                <li>Tasks</li>
-                <li>Add Button</li>
-                <li>Stats</li>
-                <li>Profile</li>
-            </div>
+            <nav className='navigation-bar'>
+                <div className='nav-item'>
+                    <Home size={24}/>
+                    <span className='nav-label'>Home</span>
+                </div>
+
+                <div className='nav-item'>
+                    <List size={24}/>
+                    <span className='nav-label'>Tasks</span>
+                </div>
+
+                <div className='nav-item'>
+                    <PlusCircle size={34}/>
+                </div>
+
+                <div className='nav-item'>
+                    <BarChart size={24}/>
+                    <span className='nav-label'>Stats</span>
+                </div>
+
+                <div className='nav-item'>
+                    <User size={24}/>
+                    <span className='nav-label'>Profile</span>
+                </div>
+            </nav>
     </>
     )
 }

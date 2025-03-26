@@ -1,53 +1,49 @@
-import { useState } from 'react'
-// import {Header} from  './components/Header.jsx';
+import { useState } from 'react';
 import {NavigationBar} from './components/NavigationBar.jsx';
-import {BrowserRouter, Outlet, Route, Routes} from "react-router-dom";
-import './App.css'
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
+import './App.css';
 
+// Przykładowy komponent strony głównej
+const Home = () => {
+    return (
+        <div className="home-page">
+            <h1>Welcome to TaskMaster</h1>
+        </div>
+    );
+};
+
+// Layout ogólny z paskiem nawigacji
 const HomeLayout = () => {
-    return(
+    return (
         <div>
-            <div className='header'>
-
-                    <NavigationBar/>
-
-
-                {/*<Header/>*/}
-
-            </div>
-
-
-
+            {/*<header className="app-header">*/}
+            {/*    /!* Można dodać logo lub nazwę aplikacji tutaj *!/*/}
+            {/*</header>*/}
 
             <main>
-        <Outlet/>
+                <Outlet />
             </main>
+
+            <NavigationBar />
         </div>
-    )
-}
+    );
+};
 
-
+// Konfiguracja routera
 const Router = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<HomeLayout />}>
-
+                <Route path="/" element={<HomeLayout />}>
+                    <Route index element={<Home />} />
                 </Route>
             </Routes>
         </BrowserRouter>
-    )
-}
-
+    );
+};
 
 function App() {
-
-
-  return (
-      <>
-      <Router/>
-      </>
-  )
+    return <Router />;
 }
 
-export default App
+export default App;

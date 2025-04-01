@@ -8,7 +8,7 @@ import '../style/_navigationbar.scss';
             <nav className='navigation-bar'>
                 <div className='nav-item'>
                     <Home size={24}/>
-                    <span className='nav-label'>Home</span>
+                    <Link to='home' className='nav-label' >Home</Link>
                 </div>
 
                 <div className='nav-item'>
@@ -27,7 +27,7 @@ import '../style/_navigationbar.scss';
 
                 <div className='nav-item'>
                     <User size={24}/>
-                    <span className='nav-label'>Profile</span>
+                    <Link to='profile' className='nav-label' >Profile</Link>
                 </div>
             </nav>
     </>

@@ -1,3 +1,4 @@
+<!--
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,4 +11,613 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salon Fryzjerski - Perfekcyjny Styl</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+    }
+
+    .team-card:hover img {
+      transform: scale(1.05);
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-card {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body class="font-sans bg-gray-50">
+<!-- Nawigacja -->
+<nav class="bg-white shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-20 items-center">
+      <div class="flex items-center">
+        <div class="flex-shrink-0">
+          <i class="fas fa-scissors text-3xl text-purple-600"></i>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <a href="#home" class="text-purple-600 px-3 py-2 rounded-md text-sm font-medium">Strona główna</a>
+            <a href="#services" class="text-gray-700 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium">Usługi</a>
+            <a href="#team" class="text-gray-700 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium">Zespół</a>
+            <a href="#gallery" class="text-gray-700 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium">Galeria</a>
+            <a href="#contact" class="text-gray-700 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium">Kontakt</a>
+          </div>
+        </div>
+      </div>
+      <div class="hidden md:block">
+        <a href="#contact" class="bg-purple-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-purple-700 transition duration-300">Umów wizytę</a>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-btn" class="text-gray-700 focus:outline-none">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white pb-3 px-2">
+    <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600">Strona główna</a>
+    <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600">Usługi</a>
+    <a href="#team" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600">Zespół</a>
+    <a href="#gallery" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600">Galeria</a>
+    <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600">Kontakt</a>
+    <a href="#contact" class="block mt-2 bg-purple-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-purple-700 transition duration-300 text-center">Umów wizytę</a>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero min-h-screen flex items-center justify-center text-white">
+  <div class="text-center px-4">
+    <h1 class="text-4xl md:text-6xl font-bold mb-6">Perfekcyjny Styl</h1>
+    <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Profesjonalne usługi fryzjerskie, które podkreślą Twoją naturalną urodę</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="#contact" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full text-lg font-medium transition duration-300">Umów wizytę</a>
+      <a href="#services" class="bg-white hover:bg-gray-100 text-purple-600 px-8 py-3 rounded-full text-lg font-medium transition duration-300">Nasze usługi</a>
+    </div>
+  </div>
+</section>
+
+<!-- O nas -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:flex items-center">
+      <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Poznaj nasz salon</h2>
+        <p class="text-gray-600 mb-4">Witamy w Perfekcyjnym Stylu - miejscu, gdzie pasja spotyka się z profesjonalizmem. Od ponad 10 lat tworzymy wyjątkowe fryzury, które podkreślają indywidualność naszych klientów.</p>
+        <p class="text-gray-600 mb-6">Nasz zespół doświadczonych stylistów stale podnosi swoje kwalifikacje, aby zapewnić Ci najwyższą jakość usług. Korzystamy wyłącznie z profesjonalnych produktów renomowanych marek.</p>
+        <div class="flex flex-wrap gap-4">
+          <div class="flex items-center">
+            <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+            <span class="text-gray-700">Profesjonalne produkty</span>
+          </div>
+          <div class="flex items-center">
+            <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+            <span class="text-gray-700">Doświadczeni stylisci</span>
+          </div>
+          <div class="flex items-center">
+            <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+            <span class="text-gray-700">Przyjazna atmosfera</span>
+          </div>
+        </div>
+      </div>
+      <div class="lg:w-1/2">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="rounded-lg overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Salon fryzjerski" class="w-full h-full object-cover">
+          </div>
+          <div class="rounded-lg overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Narzędzia fryzjerskie" class="w-full h-full object-cover">
+          </div>
+          <div class="rounded-lg overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1580618672591-eb160ffa6a26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Klientka w salonie" class="w-full h-full object-cover">
+          </div>
+          <div class="rounded-lg overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef762b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pracownica salonu" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Usługi -->
+<section id="services" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Nasze usługi</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Oferujemy kompleksowe usługi fryzjerskie dostosowane do Twoich potrzeb</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Usługa 1 -->
+      <div class="service-card bg-white rounded-xl shadow-md overflow-hidden p-6">
+        <div class="text-purple-600 mb-4">
+          <i class="fas fa-cut text-4xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Strzyżenie</h3>
+        <p class="text-gray-600 mb-4">Profesjonalne strzyżenie damskie i męskie dostosowane do kształtu twarzy i stylu życia.</p>
+        <div class="flex justify-between items-center">
+          <span class="text-purple-600 font-bold">Od 80 zł</span>
+          <a href="#contact" class="text-purple-600 hover:text-purple-800 font-medium">Umów się</a>
+        </div>
+      </div>
+
+      <!-- Usługa 2 -->
+      <div class="service-card bg-white rounded-xl shadow-md overflow-hidden p-6">
+        <div class="text-purple-600 mb-4">
+          <i class="fas fa-paint-brush text-4xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Koloryzacja</h3>
+        <p class="text-gray-600 mb-4">Nowoczesne techniki koloryzacji włosów, w tym balayage, ombre i kolorowe pasemka.</p>
+        <div class="flex justify-between items-center">
+          <span class="text-purple-600 font-bold">Od 150 zł</span>
+          <a href="#contact" class="text-purple-600 hover:text-purple-800 font-medium">Umów się</a>
+        </div>
+      </div>
+
+      <!-- Usługa 3 -->
+      <div class="service-card bg-white rounded-xl shadow-md overflow-hidden p-6">
+        <div class="text-purple-600 mb-4">
+          <i class="fas fa-spa text-4xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Pielęgnacja</h3>
+        <p class="text-gray-600 mb-4">Zabiegi regenerujące i odżywcze dla włosów zniszczonych, suchych i wymagających.</p>
+        <div class="flex justify-between items-center">
+          <span class="text-purple-600 font-bold">Od 120 zł</span>
+          <a href="#contact" class="text-purple-600 hover:text-purple-800 font-medium">Umów się</a>
+        </div>
+      </div>
+
+      <!-- Usługa 4 -->
+      <div class="service-card bg-white rounded-xl shadow-md overflow-hidden p-6">
+        <div class="text-purple-600 mb-4">
+          <i class="fas fa-venus text-4xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Stylizacja ślubna</h3>
+        <p class="text-gray-600 mb-4">Eleganckie fryzury ślubne i wieczorowe, dopasowane do Twojej sukni i osobowości.</p>
+        <div class="flex justify-between items-center">
+          <span class="text-purple-600 font-bold">Od 200 zł</span>
+          <a href="#contact" class="text-purple-600 hover:text-purple-800 font-medium">Umów się</a>
+        </div>
+      </div>
+
+      <!-- Usługa 5 -->
+      <div class="service-card bg-white rounded-xl shadow-md overflow-hidden p-6">
+        <div class="text-purple-600 mb-4">
+          <i class="fas fa-mars text-4xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Golenie i trymowanie brody</h3>
+        <p class="text-gray-600 mb-4">Klasyczne golenie brzytwą oraz precyzyjne modelowanie brody i wąsów.</p>
+        <div class="flex justify-between items-center">
+          <span class="text-purple-600 font-bold">Od 60 zł</span>
+          <a href="#contact" class="text-purple-600 hover:text-purple-800 font-medium">Umów się</a>
+        </div>
+      </div>
+
+      <!-- Usługa 6 -->
+      <div class="service-card bg-white rounded-xl shadow-md overflow-hidden p-6">
+        <div class="text-purple-600 mb-4">
+          <i class="fas fa-child text-4xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Fryzjer dziecięcy</h3>
+        <p class="text-gray-600 mb-4">Przyjazne i bezstresowe strzyżenie dla najmłodszych w miłej atmosferze.</p>
+        <div class="flex justify-between items-center">
+          <span class="text-purple-600 font-bold">Od 50 zł</span>
+          <a href="#contact" class="text-purple-600 hover:text-purple-800 font-medium">Umów się</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Zespół -->
+<section id="team" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Poznaj nasz zespół</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Profesjonaliści z pasją, którzy zadbają o Twój wygląd</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Członek zespołu 1 -->
+      <div class="team-card text-center">
+        <div class="rounded-full overflow-hidden w-48 h-48 mx-auto mb-6">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Anna Nowak" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-1">Anna Nowak</h3>
+        <p class="text-purple-600 font-medium mb-3">Właścicielka, stylistka</p>
+        <p class="text-gray-600 mb-4">Specjalizuje się w koloryzacji i stylizacji włosów. Absolwentka prestiżowej akademii fryzjerskiej w Paryżu.</p>
+        <div class="flex justify-center space-x-4">
+          <a href="#" class="text-gray-500 hover:text-purple-600"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-gray-500 hover:text-purple-600"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Członek zespołu 2 -->
+      <div class="team-card text-center">
+        <div class="rounded-full overflow-hidden w-48 h-48 mx-auto mb-6">
+          <img src="https://images.unsplash.com/photo-1551830820-330a71b99659?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Katarzyna Kowalska" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-1">Katarzyna Kowalska</h3>
+        <p class="text-purple-600 font-medium mb-3">Fryzjerka damska</p>
+        <p class="text-gray-600 mb-4">Ekspertka w strzyżeniu i przedłużaniu włosów. Tworzy fryzury idealnie dopasowane do kształtu twarzy.</p>
+        <div class="flex justify-center space-x-4">
+          <a href="#" class="text-gray-500 hover:text-purple-600"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-gray-500 hover:text-purple-600"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Członek zespołu 3 -->
+      <div class="team-card text-center">
+        <div class="rounded-full overflow-hidden w-48 h-48 mx-auto mb-6">
+          <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Marek Wiśniewski" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-1">Marek Wiśniewski</h3>
+        <p class="text-purple-600 font-medium mb-3">Fryzjer męski</p>
+        <p class="text-gray-600 mb-4">Mistrz klasycznego golenia brzytwą i stylizacji brody. Tworzy męskie fryzury z charakterem.</p>
+        <div class="flex justify-center space-x-4">
+          <a href="#" class="text-gray-500 hover:text-purple-600"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-gray-500 hover:text-purple-600"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Członek zespołu 4 -->
+      <div class="team-card text-center">
+        <div class="rounded-full overflow-hidden w-48 h-48 mx-auto mb-6">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80" alt="Joanna Lewandowska" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-1">Joanna Lewandowska</h3>
+        <p class="text-purple-600 font-medium mb-3">Stylistka paznokci</p>
+        <p class="text-gray-600 mb-4">Specjalistka od manicure i pedicure. Tworzy piękne i trwałe stylizacje paznokci.</p>
+        <div class="flex justify-center space-x-4">
+          <a href="#" class="text-gray-500 hover:text-purple-600"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-gray-500 hover:text-purple-600"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Galeria -->
+<section id="gallery" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Nasze realizacje</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Zobacz efekty naszej pracy i zainspiruj się</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div class="rounded-lg overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Fryzura 1" class="w-full h-64 object-cover hover:scale-105 transition duration-300">
+      </div>
+      <div class="rounded-lg overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" alt="Fryzura 2" class="w-full h-64 object-cover hover:scale-105 transition duration-300">
+      </div>
+      <div class="rounded-lg overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0732a5620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Fryzura 3" class="w-full h-64 object-cover hover:scale-105 transition duration-300">
+      </div>
+      <div class="rounded-lg overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1583864697784-a0efc8379f70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Fryzura 4" class="w-full h-64 object-cover hover:scale-105 transition duration-300">
+      </div>
+      <div class="rounded-lg overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1583864697530-880598ff14e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Fryzura 5" class="w-full h-64 object-cover hover:scale-105 transition duration-300">
+      </div>
+      <div class="rounded-lg overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1581404917879-42126b91f64f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Fryzura 6" class="w-full h-64 object-cover hover:scale-105 transition duration-300">
+      </div>
+      <div class="rounded-lg overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1581404917879-42126b91f64f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Fryzura 7" class="w-full h-64 object-cover hover:scale-105 transition duration-300">
+      </div>
+      <div class="rounded-lg overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1581404917879-42126b91f64f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Fryzura 8" class="w-full h-64 object-cover hover:scale-105 transition duration-300">
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="#" class="inline-block bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full text-lg font-medium transition duration-300">Zobacz więcej</a>
+    </div>
+  </div>
+</section>
+
+<!-- Opinie -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Co mówią o nas klienci</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Zobacz opinie naszych zadowolonych klientów</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Opinia 1 -->
+      <div class="testimonial-card bg-white rounded-xl p-8">
+        <div class="flex items-center mb-4">
+          <div class="flex-shrink-0">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+          </div>
+        </div>
+        <p class="text-gray-600 mb-6">"Fantastyczne miejsce! Anna doskonale zna się na koloryzacji. Wyszłam z salonu z pięknym, naturalnym balayage. Polecam każdemu!"</p>
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
+            <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Alicja Kowalska">
+          </div>
+          <div class="ml-3">
+            <p class="text-sm font-medium text-gray-900">Alicja Kowalska</p>
+            <p class="text-sm text-gray-500">Klientka od 3 lat</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Opinia 2 -->
+      <div class="testimonial-card bg-white rounded-xl p-8">
+        <div class="flex items-center mb-4">
+          <div class="flex-shrink-0">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+          </div>
+        </div>
+        <p class="text-gray-600 mb-6">"Marek to mistrz strzyżenia męskiego! Zawsze wie, co będzie mi pasować. Salon utrzymany w świetnym stylu, bardzo polecam."</p>
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
+            <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Tomasz Nowak">
+          </div>
+          <div class="ml-3">
+            <p class="text-sm font-medium text-gray-900">Tomasz Nowak</p>
+            <p class="text-sm text-gray-500">Klient od 2 lat</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Opinia 3 -->
+      <div class="testimonial-card bg-white rounded-xl p-8">
+        <div class="flex items-center mb-4">
+          <div class="flex-shrink-0">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+          </div>
+        </div>
+        <p class="text-gray-600 mb-6">"Fryzura ślubna wykonana przez Kasię przeszła moje najśmielsze oczekiwania. Wyglądałam pięknie i fryzura trzymała się całą noc!"</p>
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
+            <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" alt="Magdalena Wiśniewska">
+          </div>
+          <div class="ml-3">
+            <p class="text-sm font-medium text-gray-900">Magdalena Wiśniewska</p>
+            <p class="text-sm text-gray-500">Klientka okazjonalna</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Kontakt -->
+<section id="contact" class="py-20 bg-purple-600 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:grid lg:grid-cols-2 lg:gap-12">
+      <div class="mb-12 lg:mb-0">
+        <h2 class="text-3xl font-bold mb-6">Skontaktuj się z nami</h2>
+        <p class="mb-8">Jesteśmy do Twojej dyspozycji od poniedziałku do soboty. Umów się na wizytę lub zadzwoń, aby uzyskać więcej informacji.</p>
+
+        <div class="space-y-6">
+          <div class="flex items-start">
+            <div class="flex-shrink-0 mt-1">
+              <i class="fas fa-map-marker-alt text-xl"></i>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-lg font-medium">Adres</h3>
+              <p>ul. Fryzjerska 15<br>00-001 Warszawa</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0 mt-1">
+              <i class="fas fa-phone-alt text-xl"></i>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-lg font-medium">Telefon</h3>
+              <p>+48 123 456 789</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0 mt-1">
+              <i class="fas fa-envelope text-xl"></i>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-lg font-medium">Email</h3>
+              <p>kontakt@perfekcyjnystyl.pl</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0 mt-1">
+              <i class="fas fa-clock text-xl"></i>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-lg font-medium">Godziny otwarcia</h3>
+              <p>Pon-Pt: 9:00 - 20:00<br> Sob: 9:00 - 15:00<br> Niedziela: nieczynne</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <h3 class="text-lg font-medium mb-4">Śledź nas</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="bg-white text-purple-600 hover:bg-gray-100 rounded-full w-10 h-10 flex items-center justify-center">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="bg-white text-purple-600 hover:bg-gray-100 rounded-full w-10 h-10 flex items-center justify-center">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="bg-white text-purple-600 hover:bg-gray-100 rounded-full w-10 h-10 flex items-center justify-center">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-3xl font-bold mb-6">Umów wizytę</h2>
+        <form class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium">Imię i nazwisko</label>
+            <input type="text" id="name" class="mt-1 block w-full px-4 py-3 bg-purple-700 border border-purple-500 rounded-md text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-white focus:border-white">
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium">Email</label>
+            <input type="email" id="email" class="mt-1 block w-full px-4 py-3 bg-purple-700 border border-purple-500 rounded-md text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-white focus:border-white">
+          </div>
+
+          <div>
+            <label for="phone" class="block text-sm font-medium">Telefon</label>
+            <input type="tel" id="phone" class="mt-1 block w-full px-4 py-3 bg-purple-700 border border-purple-500 rounded-md text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-white focus:border-white">
+          </div>
+
+          <div>
+            <label for="service" class="block text-sm font-medium">Usługa</label>
+            <select id="service" class="mt-1 block w-full px-4 py-3 bg-purple-700 border border-purple-500 rounded-md text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-white focus:border-white">
+              <option>Strzyżenie damskie</option>
+              <option>Strzyżenie męskie</option>
+              <option>Koloryzacja</option>
+              <option>Pielęgnacja</option>
+              <option>Stylizacja ślubna</option>
+              <option>Golenie i trymowanie brody</option>
+              <option>Fryzjer dziecięcy</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="date" class="block text-sm font-medium">Data</label>
+            <input type="date" id="date" class="mt-1 block w-full px-4 py-3 bg-purple-700 border border-purple-500 rounded-md text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-white focus:border-white">
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium">Wiadomość (opcjonalnie)</label>
+            <textarea id="message" rows="3" class="mt-1 block w-full px-4 py-3 bg-purple-700 border border-purple-500 rounded-md text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-white focus:border-white"></textarea>
+          </div>
+
+          <div>
+            <button type="submit" class="w-full bg-white text-purple-600 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition duration-300">Wyślij</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mapa -->
+<div class="h-96 w-full">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.654050055214!2d21.01712831579683!3d52.22967597976077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669a869f01%3A0x72f0be2a88ead3fc!2sWarszawa%20Centralna!5e0!3m2!1spl!2spl!4v1629999999999!5m2!1spl!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<!-- Stopka -->
+<footer class="bg-gray-900 text-white py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <h3 class="text-lg font-bold mb-4">Perfekcyjny Styl</h3>
+        <p class="text-gray-400">Profesjonalny salon fryzjerski w centrum Warszawy. Dbamy o Twój wygląd od 2010 roku.</p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold mb-4">Godziny otwarcia</h3>
+        <ul class="space-y-2 text-gray-400">
+          <li>Pon-Pt: 9:00 - 20:00</li>
+          <li>Sob: 9:00 - 15:00</li>
+          <li>Niedziela: nieczynne</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold mb-4">Szybkie linki</h3>
+        <ul class="space-y-2">
+          <li><a href="#home" class="text-gray-400 hover:text-white">Strona główna</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white">Usługi</a></li>
+          <li><a href="#team" class="text-gray-400 hover:text-white">Zespół</a></li>
+          <li><a href="#gallery" class="text-gray-400 hover:text-white">Galeria</a></li>
+          <li><a href="#contact" class="text-gray-400 hover:text-white">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold mb-4">Newsletter</h3>
+        <p class="text-gray-400 mb-4">Zapisz się, aby otrzymywać informacje o promocjach.</p>
+        <form class="flex">
+          <input type="email" placeholder="Twój email" class="px-4 py-2 w-full rounded-l-md focus:outline-none text-gray-900">
+          <button type="submit" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-r-md">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-400 text-sm">© 2025 Perfekcyjny Styl. Wszelkie prawa zastrzeżone.</p>
+      <p class="text-gray-400 text-sm mt-4 md:mt-0">Strona wykonana przez Dawida Grochowskiego</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop,
+          behavior: 'smooth'
+        });
+
+        // Close mobile menu if open
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+        }
+      }
+    });
+  });
+</script>
+</body>
 </html>
